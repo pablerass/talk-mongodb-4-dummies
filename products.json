@@ -1,0 +1,67 @@
+
+{ "_id" : "ac3",
+  "name" : "AC3 Phone",
+  "brand" : "ACME",
+  "type" : "phone",
+  "price" : 200,
+  "warranty_years" : 1,
+  "available" : true }
+
+{ "_id" : "ac7",
+  "name" : "AC7 Phone",
+  "brand" : "ACE",
+  "type" : "phone",
+  "price" : 320,
+  "warranty_years" : 1,
+  "available" : false }
+
+{ "name" : "AC3 Series Charger",
+  "type" : [ "accessory", "charger" ],
+  "price" : 19,
+  "warranty_years" : 0.25,
+  "for" : [ "ac3", "ac7", "ac9" ] }
+
+{ "name" : "AC3 Case Green",
+  "type" : [ "accessory", "case" ],
+  "color" : "green",
+  "price" : 12,
+  "warranty_years" : 0,
+  "for" : "ac3" }
+
+{ "name" : "Phone Extended Warranty",
+  "type" : "warranty",
+  "price" : 38,
+  "warranty_years" : 2,
+  "for" : [ "ac3", "ac7", "ac9", "qp7", "qp8", "qp9" ] }
+
+{ "name" : "AC3 Case Black",
+  "type" : [ "accessory", "case" ],
+  "color" : "black",
+  "price" : 12.5,
+  "warranty_years" : 0.25,
+  "available" : false,
+  "for" : "ac3" }
+
+{ "name" : "AC3 Case Red",
+  "type" : [ "accessory", "case" ],
+  "color" : "red",
+  "price" : 12,
+  "warranty_years" : 0.25,
+  "available" : true,
+  "for" : "ac3" }
+
+{ "name" : "Phone Service Basic Plan",
+  "type" : "service",
+  "monthly_price" : 40,
+  "limits" : {
+    "voice" : { "units" : "minutes", "n" : 400, "over_rate" : 0.05 },
+    "data" : { "units" : "gigabytes", "n" : 20, "over_rate" : 1 } },
+  "term_years" : 2 }
+
+{ "name" : "Phone Service Core Plan",
+  "type" : "service",
+  "monthly_price" : 60,
+  "limits" : {
+    "voice" : { "units" : "minutes", "n" : 1000, "over_rate" : 0.05 },
+    "data" : { "n" : "unlimited", "over_rate" : 0 } },
+  "term_years" : 1 }

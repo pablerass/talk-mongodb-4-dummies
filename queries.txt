@@ -1,0 +1,28 @@
+
+db.products.find()
+
+db.products.find({ type: "phone" })
+
+db.products.find({ type: "phone" }, { _id: 1, name: 1 })
+
+db.products.find({ type: "accessory" }, { name: 1, for: 1 })
+
+db.products.find({ type: "accessory" }, { _id: 0, name: 1, for: 1 })
+
+db.products.find({ type: "accessory", for: "ac3" }, { _id: 0, name: 1 })
+
+db.products.find({ $or: [{ available: true }, { type: "service" }] })
+
+db.products.find({ type: "accessory", for: "ac3" }}).sort({ price: 1 })
+
+db.products.find({ price: { $lte: 40 }}, { _id: 0, name: 1, price: 1 })
+
+db.products.find({ "limits.data": { $exists: 1 }}, { _id: 0, name: 1, "limits.data.n": 1, "limits.data.units": 1 })
+
+db.products.find({ for: "ac3", type: "case" }).count()
+
+db.products.aggregate([ { $match: { price: { $exists: 1 }}}, { $group: { _id: "$type", max_price: { $max: "$price" }}} ])
+
+db.products.insert({ _id: "ac8", name: "AC8 Phone", type: "phone", price: 330 })
+
+db.products.update({ _id: "ac8" }, { $set: { price: 400 }})
